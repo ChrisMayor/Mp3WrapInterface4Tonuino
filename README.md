@@ -101,7 +101,7 @@ MyPreparedAudiobooks(OutputFolder)
 ### Option 3: Number folders
 
 * Numbers the directories in the output folder ascending (01 - xx)
-
+* The starting number can be entered at the UI
 #### Input folder:
 
 ```
