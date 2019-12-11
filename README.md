@@ -8,7 +8,7 @@ Requirements:
 
 ## Documentation / Quick start currently in work
 
-<img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton.JPG"/>
+<img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton.jpg"/>
 
 ### Option 1 - Hörspielmodus / Audio book mode:
 
