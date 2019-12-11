@@ -6,7 +6,11 @@ Requirements:
 * .NET Framework 4.7.2
 * mp3wrap (http://mp3wrap.sourceforge.net/)
 
-## Documentation / Quick start currently in work
+## Download binary 0.5
+
+https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Releases/0.5/Mp3WrapInterface4Tonunio.zip
+
+## Documentation / Quick start
 
 <img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton.jpg"/>
 
