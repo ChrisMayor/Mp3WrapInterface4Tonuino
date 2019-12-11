@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,14 +15,14 @@ namespace WrpMp3Interface
 {
     public partial class Form1 : Form
     {
-
+        private static readonly ILogger logger = LogManager.GetCurrentClassLogger();
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -35,12 +36,12 @@ namespace WrpMp3Interface
                     //Get the path of specified file
                     txtmp3wrap.Text = openFileDialog.FileName;
 
-                    
+
                 }
             }
         }
 
-        private void btninput_Click(object sender, EventArgs e)
+        private async void btninput_Click(object sender, EventArgs e)
         {
             using (var fbd = new FolderBrowserDialog())
             {
@@ -54,7 +55,7 @@ namespace WrpMp3Interface
             }
         }
 
-        private void btnoutput_Click(object sender, EventArgs e)
+        private async void btnoutput_Click(object sender, EventArgs e)
         {
             using (var fbd = new FolderBrowserDialog())
             {
@@ -68,38 +69,47 @@ namespace WrpMp3Interface
             }
         }
 
-        private void btnNumber_Click(object sender, EventArgs e)
+        private async void btnNumber_Click(object sender, EventArgs e)
         {
             txtlog.Clear();
-            AddendLog("Start");
-            string[] dirs = Directory.GetDirectories(txtoutput.Text, "*", SearchOption.TopDirectoryOnly);
-            Console.WriteLine("The number of directories is {0}.", dirs.Length);
-            var currentNumber = int.Parse(txtnostart.Text);
-            foreach (string dir in dirs.OrderBy(d => d))
+            AddendLog("Start 3: Numbering");
+            await Task.Run(() =>
             {
-                Directory.Move(dir, $"{txtoutput.Text}\\{currentNumber.ToString("00")}");
-                currentNumber++;
-            }
-            AddendLog("End");
-        }
-
-        private void btnAlbum_Click(object sender, EventArgs e)
-        {
-            txtlog.Clear();
-            AddendLog("Start");
-            foreach (string dir in SearchForMp3Directory(txtinput.Text).OrderBy(d => d))
-            {
-                var directoryname = dir.Split('\\').Last();
-                var outputdirectorygenerated = $"{txtoutput.Text}\\{directoryname}";
-                DirectoryCopy(dir, outputdirectorygenerated, false);
-                var currentNumber = 1;
-                foreach (var file in Directory.GetFiles(outputdirectorygenerated, "*.mp3").OrderBy(x => x))
+                string[] dirs = Directory.GetDirectories(txtoutput.Text, "*", SearchOption.TopDirectoryOnly);
+                Console.WriteLine("The number of directories is {0}.", dirs.Length);
+                var currentNumber = int.Parse(txtnostart.Text);
+                foreach (string dir in dirs.OrderBy(d => d))
                 {
-                    File.Move(file, $"{outputdirectorygenerated}/{currentNumber.ToString("000")}.mp3");
+                    logger.Info($"Number Directory: {dir}");
+                    Directory.Move(dir, $"{txtoutput.Text}\\{currentNumber.ToString("00")}");
                     currentNumber++;
                 }
-            }
-            AddendLog("End");
+            });
+            AddendLog("End 3: Numbering");
+        }
+
+        private async void btnAlbum_Click(object sender, EventArgs e)
+        {
+            txtlog.Clear();
+            AddendLog("Start 2: Album");
+            await Task.Run(() =>
+            {
+                foreach (string dir in SearchForMp3Directory(txtinput.Text).OrderBy(d => d))
+                {
+                    var directoryname = dir.Split('\\').Last();
+                    var outputdirectorygenerated = $"{txtoutput.Text}\\{directoryname}";
+                    DirectoryCopy(dir, outputdirectorygenerated, false);
+                    var currentNumber = 1;
+                    foreach (var file in Directory.GetFiles(outputdirectorygenerated, "*.mp3").OrderBy(x => x))
+                    {
+                        logger.Info($"Move file: {file}");
+                        logger.Info($"to file: {outputdirectorygenerated}/{currentNumber.ToString("000")}.mp3");
+                        File.Move(file, $"{outputdirectorygenerated}/{currentNumber.ToString("000")}.mp3");
+                        currentNumber++;
+                    }
+                }
+            });
+            AddendLog("End 2: Album");
         }
 
 
@@ -165,53 +175,56 @@ namespace WrpMp3Interface
             }
         }
 
-        private void btnHoer_Click(object sender, EventArgs e)
+        private async void btnHoer_Click(object sender, EventArgs e)
         {
             txtlog.Clear();
-            AddendLog("Start");
-            foreach (string dir in SearchForMp3Directory(txtinput.Text).OrderBy(d => d))
+            AddendLog("Start 1: Hörbuch");
+            await Task.Run(() =>
             {
-                var directoryname = dir.Split('\\').Last();
-                var outputdirectorygenerated = $"{txtoutput.Text}\\{directoryname}";
-                DirectoryCopy(dir, outputdirectorygenerated, false);
-                var mp3files = Directory.GetFiles(outputdirectorygenerated, "*.mp3").OrderBy(x => x).ToList();
-                var mp3FilesQuoted = new List<string>();
-                foreach (var file in mp3files)
+                foreach (string dir in SearchForMp3Directory(txtinput.Text).OrderBy(d => d))
                 {
-                    mp3FilesQuoted.Add("\"" + file + "\"");
-                }
-                
-                var cmd = txtmp3wrap.Text + $"{outputdirectorygenerated}\\001.mp3 {string.Join(" ", mp3FilesQuoted.OrderBy(x => x))}";
-
-                var proc = new Process
-                {
-                    StartInfo = new ProcessStartInfo
+                    var directoryname = dir.Split('\\').Last();
+                    var outputdirectorygenerated = $"{txtoutput.Text}\\{directoryname}";
+                    DirectoryCopy(dir, outputdirectorygenerated, false);
+                    var mp3files = Directory.GetFiles(outputdirectorygenerated, "*.mp3").OrderBy(x => x).ToList();
+                    var mp3FilesQuoted = new List<string>();
+                    foreach (var file in mp3files)
                     {
-                        FileName = txtmp3wrap.Text,
-                        Arguments = $"\"{outputdirectorygenerated}\\001.mp3\" {string.Join(" ", mp3FilesQuoted)}",
-                        UseShellExecute = false,
-                        RedirectStandardOutput = true,
-                        CreateNoWindow = true
+                        mp3FilesQuoted.Add("\"" + file + "\"");
                     }
-                };
 
-                proc.Start();
-                while (!proc.StandardOutput.EndOfStream)
-                {
-                    string line = proc.StandardOutput.ReadLine();
-                    Console.WriteLine(line);
-                }
+                    var cmd = txtmp3wrap.Text + $"{outputdirectorygenerated}\\001.mp3 {string.Join(" ", mp3FilesQuoted.OrderBy(x => x))}";
+                    logger.Info($"Run mp3wrap: {cmd}");
+                    var proc = new Process
+                    {
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = txtmp3wrap.Text,
+                            Arguments = $"\"{outputdirectorygenerated}\\001.mp3\" {string.Join(" ", mp3FilesQuoted)}",
+                            UseShellExecute = false,
+                            RedirectStandardOutput = true,
+                            CreateNoWindow = true
+                        }
+                    };
 
-                foreach (var file in mp3files)
-                {
-                    File.Delete(file);
+                    proc.Start();
+                    while (!proc.StandardOutput.EndOfStream)
+                    {
+                        string line = proc.StandardOutput.ReadLine();
+                        logger.Info($"{line}");
+                    }
+
+                    foreach (var file in mp3files)
+                    {
+                        File.Delete(file);
+                    }
+                    if (File.Exists($"{outputdirectorygenerated}\\001_MP3WRAP.MP3"))
+                    {
+                        File.Move($"{outputdirectorygenerated}\\001_MP3WRAP.MP3", $"{outputdirectorygenerated}\\001.MP3");
+                    }
                 }
-                if (File.Exists($"{outputdirectorygenerated}\\001_MP3WRAP.MP3"))
-                {
-                    File.Move($"{outputdirectorygenerated}\\001_MP3WRAP.MP3", $"{outputdirectorygenerated}\\001.MP3");
-                }
-            }
-            AddendLog("End");
+            });
+            AddendLog("End 1: Hörbuch");
         }
 
         private void AddendLog(string s)
