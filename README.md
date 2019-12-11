@@ -105,23 +105,20 @@ MyPreparedAudiobooks(OutputFolder)
 #### Input folder:
 
 ```
-MyAudioBooks(InputFolder) 
+MyPreparedAudiobooks(OutputFolder) 
 │
-└───ChristmasMusic
-│   │
-│   └──Singing with Rudi the Reindeer
-│       │   001 - Oh christmas tree.mp3
-│       │   002 - Jingle bells.mp3
-│       │   003 - White christmas.mp3
-│   └──Dancing with the Grinch
-│       │   001 - Joy to the world.mp3
-│       │   002 - Winter wonderland.mp3
-│       │   003 - Rudolph the red nose r.mp3
-│   
+└───Singing with Rudi the Reindeer
+│   │   001.mp3
+│   │   002.mp3
+│   │   003.mp3
+└────Dancing with the Grinch
+│   │   001.mp3
+│   │   002.mp3
+│   │   003.mp3
 └───The Elves - Hevy Metal
-    │   001 - Heavy metal christmas.mp3
-    │   002 - Hard rock egg nog.mp3
-    │   003 - Jingle guitar.mp3
+    │   001.mp3
+    │   002.mp3
+    │   003.mp3
 ```
 
 #### Output folder (Result):
