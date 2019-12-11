@@ -36,6 +36,7 @@ MyAudioBooks(InputFolder)
 
 #### Output folder (Result):
 
+```
 MyPreparedAudiobooks(OutputFolder) 
 │
 └───Tales from Rudi the Reindeer
