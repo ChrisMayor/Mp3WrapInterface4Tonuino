@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/ich0166/Mp3WrapInterface4Tonuino/_apis/build/status/ChrisMayor.Mp3WrapInterface4Tonuino?branchName=master)](https://dev.azure.com/ich0166/Mp3WrapInterface4Tonuino/_build/latest?definitionId=6&branchName=master)
 # Mp3WrapInterface4Tonuino
 Interface for mp3wrap to convert mp3s to correct format for the Tonunio https://www.voss.earth/tonuino/
 
@@ -6,9 +7,16 @@ Requirements:
 * .NET Framework 4.7.2
 * mp3wrap (http://mp3wrap.sourceforge.net/)
 
-## Documentation / Quick start currently in work
+## Download binary for Windows 0.5
 
-<img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton4.JPG"/>
+https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Releases/0.5/Mp3WrapInterface4Tonunio.zip
+
+## Documentation / Quick start
+
+<img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton.jpg"/>
+
+* No error handling
+* logging in logfile.txt (application directory)
 
 ### Option 1 - Hörspielmodus / Audio book mode:
 
