@@ -12,6 +12,10 @@ Requirements:
 
 ### Option 1 - Hörspielmodus / Audio book mode:
 
+* Scans the subfolders of the input folder for mp3s
+* If mp3s are found, the folder will be copied to output folder
+* Then all mp3s in folder will be merged to one with mp3wrap
+
 #### Input folder:
 
 ```
@@ -48,6 +52,10 @@ MyPreparedAudiobooks(OutputFolder)
 ```
 
 ### Option 2: Albummodus / Album mode
+
+* Scans the subfolders of the input folder for mp3s
+* If mp3s are found, the folder will be copied to output folder
+* Then all mp3s in folder will numbered ascending from 001.mp3 to xxx.mp3 
 
 #### Input folder:
 
