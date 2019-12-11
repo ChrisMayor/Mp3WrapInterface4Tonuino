@@ -90,7 +90,50 @@ MyPreparedAudiobooks(OutputFolder)
     │   003.mp3
 ```
 
-### Option 3:
+### Option 3: Number folders
+
+
+#### Input folder:
+
+```
+MyAudioBooks(InputFolder) 
+│
+└───ChristmasMusic
+│   │
+│   └──Singing with Rudi the Reindeer
+│       │   001 - Oh christmas tree.mp3
+│       │   002 - Jingle bells.mp3
+│       │   003 - White christmas.mp3
+│   └──Dancing with the Grinch
+│       │   001 - Joy to the world.mp3
+│       │   002 - Winter wonderland.mp3
+│       │   003 - Rudolph the red nose r.mp3
+│   
+└───The Elves - Hevy Metal
+    │   001 - Heavy metal christmas.mp3
+    │   002 - Hard rock egg nog.mp3
+    │   003 - Jingle guitar.mp3
+```
+
+#### Output folder (Result):
+
+```
+MyPreparedAudiobooks(OutputFolder) 
+│
+└───01
+│   │   001.mp3
+│   │   002.mp3
+│   │   003.mp3
+└────02
+│   │   001.mp3
+│   │   002.mp3
+│   │   003.mp3
+└───03
+    │   001.mp3
+    │   002.mp3
+    │   003.mp3
+```
+
 
 <img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton2.JPG"/>
 <img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton3.JPG"/>
