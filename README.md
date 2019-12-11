@@ -18,6 +18,8 @@ https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Releases/0.5/
 * No error handling
 * logging in logfile.txt (application directory)
 
+Hint: Directories with a length > 256 are still not supported by default in Windows and may result in an application exception
+
 ### Option 1 - Hörspielmodus / Audio book mode:
 
 * Scans the subfolders of the input folder for mp3s
