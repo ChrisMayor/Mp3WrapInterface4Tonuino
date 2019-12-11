@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/ich0166/Mp3WrapInterface4Tonuino/_apis/build/status/ChrisMayor.Mp3WrapInterface4Tonuino?branchName=master)](https://dev.azure.com/ich0166/Mp3WrapInterface4Tonuino/_build/latest?definitionId=6&branchName=master)
 # Mp3WrapInterface4Tonuino
 Interface for mp3wrap to convert mp3s to correct format for the Tonunio https://www.voss.earth/tonuino/
 
