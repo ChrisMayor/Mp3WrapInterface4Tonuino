@@ -44,6 +44,7 @@
             this.txtnostart = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtlog = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -149,8 +150,8 @@
             this.btnHoer.Name = "btnHoer";
             this.btnHoer.Size = new System.Drawing.Size(605, 56);
             this.btnHoer.TabIndex = 6;
-            this.btnHoer.Text = "Merge all mp3s with mp3wrap per subdir (Scan subdirectories of input folder for m" +
-    "p3s) and copy to output dir (hörspielmodus)";
+            this.btnHoer.Text = "1) Hörspielmodus / Audio book mode: Merge all mp3s with mp3wrap per subdir (Scan " +
+    "subdirectories of input folder for mp3s) and copy to output folder";
             this.btnHoer.UseVisualStyleBackColor = true;
             this.btnHoer.Click += new System.EventHandler(this.btnHoer_Click);
             // 
@@ -160,8 +161,8 @@
             this.btnAlbum.Name = "btnAlbum";
             this.btnAlbum.Size = new System.Drawing.Size(605, 53);
             this.btnAlbum.TabIndex = 7;
-            this.btnAlbum.Text = "Scan subdirectories of input folder for mp3 and number found files in directories" +
-    ". Then copy to output dir (albummodus)";
+            this.btnAlbum.Text = "2) Albummodus / Album mode: Scan subdirectories of input folder for mp3 and numbe" +
+    "r found files in directories. Then copy to output folder";
             this.btnAlbum.UseVisualStyleBackColor = true;
             this.btnAlbum.Click += new System.EventHandler(this.btnAlbum_Click);
             // 
@@ -171,8 +172,8 @@
             this.btnNumber.Name = "btnNumber";
             this.btnNumber.Size = new System.Drawing.Size(424, 56);
             this.btnNumber.TabIndex = 8;
-            this.btnNumber.Text = "Number directories in output directory starting with (input directory not used!) " +
-    "in Tonunio-Format (01 - 99)";
+            this.btnNumber.Text = "3) Number folders: Number directories in output directory starting with (input di" +
+    "rectory not used!) in Tonunio-Format (01 - 99)";
             this.btnNumber.UseVisualStyleBackColor = true;
             this.btnNumber.Click += new System.EventHandler(this.btnNumber_Click);
             // 
@@ -182,6 +183,7 @@
             this.txtnostart.Name = "txtnostart";
             this.txtnostart.Size = new System.Drawing.Size(80, 20);
             this.txtnostart.TabIndex = 9;
+            this.txtnostart.Text = "01";
             // 
             // label2
             // 
@@ -201,11 +203,21 @@
             this.txtlog.Size = new System.Drawing.Size(617, 64);
             this.txtlog.TabIndex = 11;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(524, 621);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Disclaimer: Use at your own risk";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 643);
+            this.ClientSize = new System.Drawing.Size(693, 643);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtlog);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtnostart);
@@ -216,7 +228,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "mp3wrap interface for tonunio 0.5 by CM";
+            this.Text = "mp3wrap interface for TonUINO 0.5 - https://github.com/ChrisMayor/Mp3WrapInterfac" +
+    "e4Tonuino";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -246,6 +259,7 @@
         private System.Windows.Forms.TextBox txtnostart;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtlog;
+        private System.Windows.Forms.Label label3;
     }
 }
 

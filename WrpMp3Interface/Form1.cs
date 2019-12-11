@@ -77,7 +77,7 @@ namespace WrpMp3Interface
             var currentNumber = int.Parse(txtnostart.Text);
             foreach (string dir in dirs.OrderBy(d => d))
             {
-                Directory.Move(dir, $"{txtoutput.Text}\\{currentNumber.ToString("000")}");
+                Directory.Move(dir, $"{txtoutput.Text}\\{currentNumber.ToString("00")}");
                 currentNumber++;
             }
             AddendLog("End");
@@ -95,7 +95,7 @@ namespace WrpMp3Interface
                 var currentNumber = 1;
                 foreach (var file in Directory.GetFiles(outputdirectorygenerated, "*.mp3").OrderBy(x => x))
                 {
-                    File.Move(file, $"{outputdirectorygenerated}/{currentNumber.ToString("00")}.mp3");
+                    File.Move(file, $"{outputdirectorygenerated}/{currentNumber.ToString("000")}.mp3");
                     currentNumber++;
                 }
             }
