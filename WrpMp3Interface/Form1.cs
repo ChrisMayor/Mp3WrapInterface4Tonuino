@@ -72,7 +72,7 @@ namespace WrpMp3Interface
         private async void btnNumber_Click(object sender, EventArgs e)
         {
             txtlog.Clear();
-            AddendLog("Start 3: Numbering");
+            AddendLog("Start 3: Numbering - please wait");
             await Task.Run(() =>
             {
                 string[] dirs = Directory.GetDirectories(txtoutput.Text, "*", SearchOption.TopDirectoryOnly);
@@ -91,7 +91,7 @@ namespace WrpMp3Interface
         private async void btnAlbum_Click(object sender, EventArgs e)
         {
             txtlog.Clear();
-            AddendLog("Start 2: Album");
+            AddendLog("Start 2: Album - please wait");
             await Task.Run(() =>
             {
                 foreach (string dir in SearchForMp3Directory(txtinput.Text).OrderBy(d => d))
@@ -178,7 +178,7 @@ namespace WrpMp3Interface
         private async void btnHoer_Click(object sender, EventArgs e)
         {
             txtlog.Clear();
-            AddendLog("Start 1: Hörbuch");
+            AddendLog("Start 1: Hörbuch - please wait");
             await Task.Run(() =>
             {
                 foreach (string dir in SearchForMp3Directory(txtinput.Text).OrderBy(d => d))
