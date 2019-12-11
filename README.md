@@ -1,6 +1,8 @@
 # Mp3WrapInterface4Tonuino
 Interface for mp3wrap to convert mp3s to correct format for the Tonunio https://www.voss.earth/tonuino/
 
+Programmed quickly in 3 hours at night.
+
 Requirements:
 
 * .NET Framework 4.7.2
