@@ -6,6 +6,8 @@ Requirements:
 * .NET Framework 4.7.2
 * mp3wrap (http://mp3wrap.sourceforge.net/)
 
+## Documentation / Quick start currently in work
+
 <img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonunio/blob/master/Screenshots/ton1.JPG"/>
 <img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonunio/blob/master/Screenshots/ton2.JPG"/>
 <img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonunio/blob/master/Screenshots/ton3.JPG"/>
