@@ -10,30 +10,41 @@ Requirements:
 
 <img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton1.JPG"/>
 
-### Option 1:
+### Option 1 - Hörbuchmodus / Audio book mode:
 
 #### Input folder:
 
 ```
-project
-│   README.md
-│   file001.txt    
+MyAudioBooks(InputFolder) 
 │
-└───folder1
-│   │   file011.txt
-│   │   file012.txt
+└───ChristmasAudioBooks
 │   │
-│   └───subfolder1
-│       │   file111.txt
-│       │   file112.txt
-│       │   ...
+│   └──Tales from Rudi the Reindeer
+│       │   001 - Intro.mp3
+│       │   002 - ChristmasStory.mp3
+│       │   003 - Outro.mp3
+│   └──In love with the Grinch
+│       │   001 - Intro.mp3
+│       │   002 - SomeStory.mp3
+│       │   003 - Outro.mp3
 │   
-└───folder2
-    │   file021.txt
-    │   file022.txt
+└───The Graduate - The Audiobook
+    │   001 - Intro.mp3
+    │   002 - SomeStory.mp3
+    │   003 - Outro.mp3
 ```
 
 #### Output folder (Result):
+
+MyPreparedAudiobooks(OutputFolder) 
+│
+└───Tales from Rudi the Reindeer
+│   │   001.mp3
+└────In love with the Grinch
+│   │   001.mp3
+└───The Graduate - The Audiobook
+    │   001.mp3
+```
 
 ### Option 2:
 
