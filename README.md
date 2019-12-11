@@ -8,7 +8,7 @@ Requirements:
 
 ## Documentation / Quick start currently in work
 
-<img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton1.JPG"/>
+<img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton2.JPG"/>
 
 ### Option 1 - Hörspielmodus / Audio book mode:
 
@@ -134,14 +134,6 @@ MyPreparedAudiobooks(OutputFolder)
     │   003.mp3
 ```
 
-
-<img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton2.JPG"/>
-<img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton3.JPG"/>
-<img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton4.JPG"/>
-<img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton5.JPG"/>
-<img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton6.JPG"/>
-<img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton7.JPG"/>
-<img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton8.JPG"/>
 
 ## Disclaimer / Impressum
 
