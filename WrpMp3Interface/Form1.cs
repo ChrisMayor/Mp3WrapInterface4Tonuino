@@ -72,7 +72,7 @@ namespace WrpMp3Interface
         {
             txtlog.Clear();
             AddendLog("Start");
-            string[] dirs = Directory.GetDirectories(txtinput.Text, "*", SearchOption.TopDirectoryOnly);
+            string[] dirs = Directory.GetDirectories(txtoutput.Text, "*", SearchOption.TopDirectoryOnly);
             Console.WriteLine("The number of directories is {0}.", dirs.Length);
             var currentNumber = int.Parse(txtnostart.Text);
             foreach (string dir in dirs.OrderBy(d => d))
