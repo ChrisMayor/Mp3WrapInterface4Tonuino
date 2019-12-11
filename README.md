@@ -10,7 +10,7 @@ Requirements:
 
 <img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton1.JPG"/>
 
-### Option 1 - Hörbuchmodus / Audio book mode:
+### Option 1 - Hörspielmodus / Audio book mode:
 
 #### Input folder:
 
