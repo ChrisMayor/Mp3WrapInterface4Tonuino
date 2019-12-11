@@ -14,6 +14,9 @@ https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Releases/0.5/
 
 <img src ="https://github.com/ChrisMayor/Mp3WrapInterface4Tonuino/blob/master/Screenshots/ton.jpg"/>
 
+* No error handling
+* logging in logfile.txt (application directory)
+
 ### Option 1 - Hörspielmodus / Audio book mode:
 
 * Scans the subfolders of the input folder for mp3s
